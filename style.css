@@ -1,0 +1,51 @@
+/* Custom resets to enforce strict "rounded-none" and "no shadows" */
+* {
+    border-radius: 0 !important;
+    box-shadow: none !important;
+}
+
+/* Exception for dress code circles since they specifically requested "идеальные круги" */
+.group > .\!rounded-full {
+    border-radius: 9999px !important;
+}
+
+body {
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Specific filter for images */
+.custom-filter {
+    filter: sepia(0.2) contrast(1.1);
+}
+
+/* Vertical writing mode for decorative text */
+.writing-vertical {
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+}
+
+/* Custom scrollbar for better aesthetics */
+::-webkit-scrollbar {
+    width: 6px;
+}
+::-webkit-scrollbar-track {
+    background: #F9F7F2;
+}
+::-webkit-scrollbar-thumb {
+    background: #3D2B1F;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #8B5E3C;
+}
+
+/* Inputs autocomplete background override to match beige */
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 30px #F9F7F2 inset !important;
+    -webkit-text-fill-color: #3D2B1F !important;
+    transition: background-color 5000s ease-in-out 0s;
+}
