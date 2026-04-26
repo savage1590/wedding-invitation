@@ -73,4 +73,47 @@ document.addEventListener('DOMContentLoaded', () => {
             }, 3000);
         });
     }
+    // 5. Add to Calendar Logic
+    const addToCalendarBtn = document.getElementById('add-to-calendar');
+    if (addToCalendarBtn) {
+        addToCalendarBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            
+            const event = {
+                title: "Весілля Владислава та Анастасії",
+                description: "Чекаємо на вас на нашому святі! Розпис о 13:00.",
+                location: "Відділ ДРАЦС на Римарській, Харків",
+                startTime: "20260718T130000",
+                endTime: "20260718T230000"
+            };
+
+            const icsContent = `BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Wedding Invitation//UA
+CALSCALE:GREGORIAN
+BEGIN:VEVENT
+SUMMARY:${event.title}
+DTSTART:${event.startTime}
+DTEND:${event.endTime}
+LOCATION:${event.location}
+DESCRIPTION:${event.description}
+STATUS:CONFIRMED
+SEQUENCE:0
+BEGIN:VALARM
+TRIGGER:-PT24H
+DESCRIPTION:Нагадування про весілля
+ACTION:DISPLAY
+END:VALARM
+END:VEVENT
+END:VCALENDAR`.replace(/\n/g, "\r\n");
+
+            const blob = new Blob([icsContent], { type: 'text/calendar;charset=utf-8' });
+            const link = document.createElement('a');
+            link.href = window.URL.createObjectURL(blob);
+            link.setAttribute('download', 'wedding_invitation.ics');
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        });
+    }
 });
