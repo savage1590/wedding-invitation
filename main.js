@@ -78,17 +78,9 @@ document.addEventListener('DOMContentLoaded', () => {
             btn.innerText = 'ВІДПРАВЛЕННЯ...';
             btn.disabled = true;
 
-            fetch(url, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({
-                    chat_id: chatId,
-                    text: text,
-                    parse_mode: 'HTML'
-                })
-            })
+            const fullUrl = `${url}?chat_id=${chatId}&text=${encodeURIComponent(text)}&parse_mode=HTML`;
+
+            fetch(fullUrl)
             .then(response => {
                 if(response.ok) {
                     btn.innerText = 'ВІДПРАВЛЕНО';
