@@ -54,23 +54,62 @@ document.addEventListener('DOMContentLoaded', () => {
     // Update every second
     setInterval(updateCountdown, 1000);
 
-    // RSVP form basic prevent default behavior
+    // 4. RSVP Form Telegram Integration
     const rsvpForm = document.querySelector('form');
     if (rsvpForm) {
         rsvpForm.addEventListener('submit', (e) => {
             e.preventDefault();
             const btn = e.target.querySelector('button');
             const originalText = btn.innerText;
-            btn.innerText = 'ВІДПРАВЛЕНО';
-            btn.classList.add('bg-beige', 'text-chocolate');
-            btn.classList.remove('bg-chocolate', 'text-beige');
             
-            setTimeout(() => {
-                btn.innerText = originalText;
-                btn.classList.remove('bg-beige', 'text-chocolate');
-                btn.classList.add('bg-chocolate', 'text-beige');
-                e.target.reset();
-            }, 3000);
+            // Get data
+            const name = document.getElementById('name').value;
+            const attendance = document.querySelector('input[name="attendance"]:checked').value;
+            
+            // Format message
+            const attendanceText = attendance === 'yes' ? '✅ Прийде' : '❌ Не зможе бути';
+            const text = `💌 <b>Нова відповідь на запрошення!</b>\n\n👤 <b>Гість:</b> ${name}\n❓ <b>Статус:</b> ${attendanceText}`;
+
+            // Bot config
+            const token = '8458202020:AAHTztTLWOjXOVHcTGBoojkLLxTRDz1YOvk';
+            const chatId = '534547134';
+            const url = `https://api.telegram.org/bot${token}/sendMessage`;
+
+            btn.innerText = 'ВІДПРАВЛЕННЯ...';
+            btn.disabled = true;
+
+            fetch(url, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    chat_id: chatId,
+                    text: text,
+                    parse_mode: 'HTML'
+                })
+            })
+            .then(response => {
+                if(response.ok) {
+                    btn.innerText = 'ВІДПРАВЛЕНО';
+                    btn.classList.add('bg-beige', 'text-chocolate');
+                    btn.classList.remove('bg-chocolate', 'text-beige');
+                    e.target.reset();
+                } else {
+                    btn.innerText = 'ПОМИЛКА';
+                }
+            })
+            .catch(error => {
+                btn.innerText = 'ПОМИЛКА МЕРЕЖІ';
+            })
+            .finally(() => {
+                setTimeout(() => {
+                    btn.innerText = originalText;
+                    btn.classList.remove('bg-beige', 'text-chocolate');
+                    btn.classList.add('bg-chocolate', 'text-beige');
+                    btn.disabled = false;
+                }, 3000);
+            });
         });
     }
 });

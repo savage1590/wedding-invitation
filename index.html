@@ -205,12 +205,12 @@
 
             <form class="w-full flex flex-col space-y-12">
                 <div class="relative w-full">
-                    <input type="text" id="name" placeholder="ВАШІ ІМ'Я ТА ПРІЗВИЩЕ" class="w-full bg-transparent border-b border-chocolate py-4 text-center uppercase tracking-widest font-light placeholder:text-muted/50 focus:outline-none focus:border-muted transition-colors duration-300">
+                    <input type="text" id="name" required placeholder="ВАШІ ІМ'Я ТА ПРІЗВИЩЕ" class="w-full bg-transparent border-b border-chocolate py-4 text-center uppercase tracking-widest font-light placeholder:text-muted/50 focus:outline-none focus:border-muted transition-colors duration-300">
                 </div>
                 
                 <div class="w-full flex flex-wrap gap-8 justify-center pb-8 border-b border-chocolate/20">
                     <label class="flex items-center cursor-pointer group">
-                        <input type="radio" name="attendance" value="yes" class="sr-only peer">
+                        <input type="radio" name="attendance" value="yes" required class="sr-only peer">
                         <div class="w-4 h-4 border border-chocolate peer-checked:bg-chocolate flex items-center justify-center mr-3 transition-colors">
                             <!-- Custom checkmark block -->
                             <div class="w-2 h-2 bg-beige opacity-0 peer-checked:opacity-100 transition-opacity"></div>
@@ -218,7 +218,7 @@
                         <span class="uppercase tracking-widest text-sm font-light group-hover:text-muted transition-colors">Я прийду</span>
                     </label>
                     <label class="flex items-center cursor-pointer group">
-                        <input type="radio" name="attendance" value="no" class="sr-only peer">
+                        <input type="radio" name="attendance" value="no" required class="sr-only peer">
                         <div class="w-4 h-4 border border-chocolate peer-checked:bg-chocolate flex items-center justify-center mr-3 transition-colors">
                             <div class="w-2 h-2 bg-beige opacity-0 peer-checked:opacity-100 transition-opacity"></div>
                         </div>
