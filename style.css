@@ -52,9 +52,16 @@ input:-webkit-autofill:active {
 
 /* Animated Breathing Gradient */
 .animate-gradient {
-    background: linear-gradient(-45deg, #F9F7F2, #E3DAC9, #F5EFEB, #EADBC8);
+    background: linear-gradient(-45deg, #F9F7F2, #E3DAC9, #D4B99D, #F9F7F2);
     background-size: 400% 400%;
-    animation: gradientShift 15s ease infinite;
+    -webkit-animation: gradientShift 8s ease infinite;
+    animation: gradientShift 8s ease infinite;
+}
+
+@-webkit-keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }
 
 @keyframes gradientShift {
