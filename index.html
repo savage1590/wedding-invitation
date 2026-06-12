@@ -6,10 +6,9 @@
     <title>Владислав та Анастасія | 18.07</title>
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💍</text></svg>">
     
-    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Pinyon+Script&display=swap" rel="stylesheet">
     
     <!-- AOS CSS -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -26,7 +25,8 @@
                         muted: '#8B5E3C'
                     },
                     fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
+                        sans: ['"Cormorant Garamond"', 'serif'],
+                        script: ['"Pinyon Script"', 'cursive'],
                         mono: ['ui-monospace', 'SFMono-Regular', 'Menlo', 'Monaco', 'Consolas', '"Liberation Mono"', '"Courier New"', 'monospace'],
                     }
                 }
@@ -43,7 +43,11 @@
 <body class="bg-beige text-chocolate font-sans antialiased selection:bg-chocolate selection:text-beige">
     <!-- Preloader -->
     <div id="preloader" class="fixed inset-0 bg-beige z-[100] flex items-center justify-center transition-opacity duration-1000">
-        <h1 class="text-4xl md:text-6xl font-black uppercase tracking-widest text-chocolate">В <span class="italic font-light lowercase text-muted">&</span> А</h1>
+        <h1 class="text-4xl md:text-6xl font-normal uppercase tracking-[0.3em] text-chocolate flex items-center gap-4">
+            В 
+            <span class="font-script text-6xl text-muted lowercase">&</span> 
+            А
+        </h1>
     </div>
     
     <!-- Hero Section -->
@@ -57,13 +61,18 @@
 
         <div class="relative z-10 w-full max-w-7xl mx-auto flex flex-col lg:grid lg:grid-cols-12 gap-4">
             <div class="col-span-12 text-center flex flex-col items-center overflow-hidden w-full px-2">
-                <p class="uppercase tracking-[0.2em] font-light text-muted mb-6 md:mb-8 text-xs sm:text-base md:text-lg border-b border-chocolate/20 pb-2 inline-block">Запрошення на весілля</p>
-                <h1 class="text-[12vw] sm:text-6xl md:text-8xl lg:text-9xl font-black uppercase leading-[1.1] mb-6 whitespace-nowrap flex flex-col items-center">
+                <p class="uppercase tracking-[0.3em] font-light text-muted mb-4 text-xs sm:text-base md:text-lg inline-block">Запрошення на весілля</p>
+                <div class="flex items-center justify-center space-x-4 mb-8">
+                    <div class="w-16 h-px bg-chocolate opacity-50"></div>
+                    <div class="w-2 h-2 rotate-45 border border-chocolate opacity-70"></div>
+                    <div class="w-16 h-px bg-chocolate opacity-50"></div>
+                </div>
+                <h1 class="text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-normal uppercase leading-[1.1] mb-6 whitespace-nowrap flex flex-col items-center tracking-widest">
                     <span class="overflow-hidden inline-block"><span class="block" data-aos="reveal-up" data-aos-duration="1200" data-aos-delay="800">Владислав</span></span>
-                    <span class="overflow-hidden inline-block"><span class="block text-4xl sm:text-5xl md:text-7xl italic font-light lowercase text-muted leading-none" data-aos="reveal-up" data-aos-duration="1200" data-aos-delay="900">&</span></span>
+                    <span class="overflow-hidden inline-block"><span class="block font-script text-6xl sm:text-8xl md:text-9xl lowercase text-muted leading-none my-2" data-aos="reveal-up" data-aos-duration="1200" data-aos-delay="900">&</span></span>
                     <span class="overflow-hidden inline-block"><span class="block" data-aos="reveal-up" data-aos-duration="1200" data-aos-delay="1000">Анастасія</span></span>
                 </h1>
-                <div class="font-mono font-light mb-12 tracking-[0.1em] text-chocolate border-l-2 border-r-2 border-chocolate/20 px-8 py-2 flex flex-col justify-center items-center">
+                <div class="font-mono font-light mb-12 tracking-[0.2em] text-chocolate border-y border-chocolate/20 px-12 py-4 flex flex-col justify-center items-center">
                     <span class="text-sm sm:text-base md:text-2xl mb-1">18.07.2026</span>
                     <span class="text-xs sm:text-sm md:text-xl opacity-70">13:00</span>
                 </div>
@@ -77,6 +86,30 @@
 
     <!-- Divider -->
     <div class="w-full border-t border-chocolate/20"></div>
+
+    <!-- Calendar Section -->
+    <section class="py-16 px-4" data-aos="fade" data-aos-duration="1000">
+        <div class="max-w-md mx-auto text-center border border-chocolate/40 p-8 relative">
+            <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-beige px-4 text-xs tracking-[0.3em] uppercase text-chocolate">Липень 2026</div>
+            <div class="grid grid-cols-7 gap-y-4 gap-x-2 text-sm mt-4 font-normal">
+                <div class="opacity-50 text-xs tracking-widest">ПН</div><div class="opacity-50 text-xs tracking-widest">ВТ</div><div class="opacity-50 text-xs tracking-widest">СР</div><div class="opacity-50 text-xs tracking-widest">ЧТ</div><div class="opacity-50 text-xs tracking-widest">ПТ</div><div class="opacity-50 text-xs tracking-widest">СБ</div><div class="opacity-50 text-xs tracking-widest">НД</div>
+                <div></div><div></div> <!-- Starts on Wednesday -->
+                <div>1</div><div>2</div><div>3</div><div>4</div><div>5</div>
+                <div>6</div><div>7</div><div>8</div><div>9</div><div>10</div><div>11</div><div>12</div>
+                <div>13</div><div>14</div><div>15</div><div>16</div><div>17</div>
+                <div class="relative flex items-center justify-center">
+                    <i data-lucide="heart" class="absolute w-8 h-8 text-chocolate fill-chocolate opacity-20"></i>
+                    <span class="relative z-10 font-bold">18</span>
+                </div>
+                <div>19</div>
+                <div>20</div><div>21</div><div>22</div><div>23</div><div>24</div><div>25</div><div>26</div>
+                <div>27</div><div>28</div><div>29</div><div>30</div><div>31</div>
+            </div>
+            <div class="mt-8 flex justify-center">
+                <div class="w-24 h-px bg-chocolate opacity-30"></div>
+            </div>
+        </div>
+    </section>
 
     <!-- Countdown Section -->
     <section class="py-24 px-4" data-aos="fade" data-aos-duration="1000">
@@ -113,36 +146,71 @@
     <div class="w-full border-t border-chocolate/20"></div>
 
     <!-- Timing Section -->
-    <section class="py-24 px-4 bg-chocolate text-beige" data-aos="fade" data-aos-duration="1000">
-        <div class="max-w-7xl mx-auto flex flex-col lg:grid lg:grid-cols-12 gap-12 lg:gap-4">
-            <div class="col-span-12 lg:col-span-4">
-                <h2 class="text-3xl md:text-6xl font-black uppercase mb-4 text-beige">Таймінг</h2>
-                <p class="text-sm uppercase tracking-widest font-light opacity-60">Розклад заходів</p>
+    <section class="py-24 px-4 bg-beige text-chocolate relative" data-aos="fade" data-aos-duration="1000">
+        <!-- SVG Decor -->
+        <div class="absolute inset-0 pointer-events-none opacity-5 flex justify-center items-center overflow-hidden">
+            <h1 class="text-[30rem] font-script">Т</h1>
+        </div>
+        
+        <div class="max-w-4xl mx-auto flex flex-col items-center relative z-10">
+            <h2 class="text-3xl md:text-5xl font-normal uppercase mb-2 tracking-widest text-center">Програма Дня</h2>
+            <div class="flex items-center justify-center space-x-4 mb-16">
+                <div class="w-12 h-px bg-chocolate opacity-40"></div>
+                <i data-lucide="flower-2" class="w-4 h-4 opacity-60"></i>
+                <div class="w-12 h-px bg-chocolate opacity-40"></div>
             </div>
-            <div class="col-span-12 lg:col-span-8">
-                <div class="flex flex-col border-l border-beige/20">
-                    <div class="pl-8 pb-12 relative">
-                        <div class="absolute w-3 h-3 bg-beige/50 top-1.5 -left-1.5"></div>
-                        <p class="font-bold text-xl md:text-2xl font-mono mb-2">13:00 - 13:40</p>
-                        <h3 class="text-sm md:text-base uppercase tracking-widest font-light opacity-80">РОЗПИС У РАЦСІ</h3>
+
+            <div class="w-full flex flex-col relative">
+                <div class="absolute top-0 bottom-0 left-[20px] md:left-1/2 md:-translate-x-1/2 border-l border-dashed border-chocolate/40"></div>
+                
+                <!-- Item 1 -->
+                <div class="flex flex-col md:flex-row w-full justify-between items-start md:items-center mb-12 relative">
+                    <div class="md:w-1/2 md:text-right pl-12 md:pl-0 md:pr-10 w-full mb-2 md:mb-0">
+                        <p class="font-normal text-2xl md:text-3xl tracking-wider">13:00</p>
                     </div>
-                    <div class="pl-8 pb-12 relative">
-                        <div class="absolute w-3 h-3 bg-beige/50 top-1.5 -left-1.5"></div>
-                        <p class="font-bold text-xl md:text-2xl font-mono mb-2">14:00 - 15:00</p>
-                        <h3 class="text-sm md:text-base uppercase tracking-widest font-light opacity-80">ФОТОСЕСІЯ В СТУДІЇ</h3>
-                    </div>
-                    <div class="pl-8 pb-12 relative">
-                        <div class="absolute w-3 h-3 bg-beige/50 top-1.5 -left-1.5"></div>
-                        <p class="font-bold text-xl md:text-2xl font-mono mb-2">15:30</p>
-                        <h3 class="text-sm md:text-base uppercase tracking-widest font-light opacity-80">КАФЕ</h3>
-                    </div>
-                    <div class="pl-8 relative">
-                        <div class="absolute w-3 h-3 bg-beige/50 top-1.5 -left-1.5"></div>
-                        <p class="text-xs uppercase tracking-widest text-muted/80 mb-1">День другий</p>
-                        <p class="font-bold text-xl md:text-2xl font-mono mb-2">19.07 13:00</p>
-                        <h3 class="text-sm md:text-base uppercase tracking-widest font-light opacity-80">ДРУГИЙ ДЕНЬ ВЕСІЛЛЯ НА АЛЬТАНЦІ</h3>
+                    <div class="w-3 h-3 bg-chocolate rounded-full absolute left-[15px] md:left-1/2 -translate-x-1/2 top-2 md:top-auto outline outline-4 outline-beige"></div>
+                    <div class="md:w-1/2 text-left pl-12 md:pl-10 w-full">
+                        <h3 class="text-sm md:text-base uppercase tracking-widest font-normal opacity-90 mb-1">Розпис у РАЦСі</h3>
+                        <p class="font-script text-xl opacity-70">офіційна частина</p>
                     </div>
                 </div>
+
+                <!-- Item 2 -->
+                <div class="flex flex-col md:flex-row w-full justify-between items-start md:items-center mb-12 relative">
+                    <div class="md:w-1/2 md:text-right pl-12 md:pl-0 md:pr-10 w-full mb-2 md:mb-0 md:order-2 text-left">
+                        <p class="font-normal text-2xl md:text-3xl tracking-wider">14:00</p>
+                    </div>
+                    <div class="w-3 h-3 bg-chocolate rounded-full absolute left-[15px] md:left-1/2 -translate-x-1/2 top-2 md:top-auto outline outline-4 outline-beige"></div>
+                    <div class="md:w-1/2 md:text-right pl-12 md:pl-0 md:pr-10 w-full md:order-1">
+                        <h3 class="text-sm md:text-base uppercase tracking-widest font-normal opacity-90 mb-1">Фотосесія</h3>
+                        <p class="font-script text-xl opacity-70">в студії</p>
+                    </div>
+                </div>
+
+                <!-- Item 3 -->
+                <div class="flex flex-col md:flex-row w-full justify-between items-start md:items-center mb-12 relative">
+                    <div class="md:w-1/2 md:text-right pl-12 md:pl-0 md:pr-10 w-full mb-2 md:mb-0">
+                        <p class="font-normal text-2xl md:text-3xl tracking-wider">15:30</p>
+                    </div>
+                    <div class="w-3 h-3 bg-chocolate rounded-full absolute left-[15px] md:left-1/2 -translate-x-1/2 top-2 md:top-auto outline outline-4 outline-beige"></div>
+                    <div class="md:w-1/2 text-left pl-12 md:pl-10 w-full">
+                        <h3 class="text-sm md:text-base uppercase tracking-widest font-normal opacity-90 mb-1">Святкова вечеря</h3>
+                        <p class="font-script text-xl opacity-70">у кафе</p>
+                    </div>
+                </div>
+
+                <!-- Item 4 -->
+                <div class="flex flex-col md:flex-row w-full justify-between items-start md:items-center relative">
+                    <div class="md:w-1/2 md:text-right pl-12 md:pl-0 md:pr-10 w-full mb-2 md:mb-0 md:order-2 text-left">
+                        <p class="font-normal text-2xl md:text-3xl tracking-wider">19.07 13:00</p>
+                    </div>
+                    <div class="w-3 h-3 bg-chocolate rounded-full absolute left-[15px] md:left-1/2 -translate-x-1/2 top-2 md:top-auto outline outline-4 outline-beige"></div>
+                    <div class="md:w-1/2 md:text-right pl-12 md:pl-0 md:pr-10 w-full md:order-1">
+                        <h3 class="text-sm md:text-base uppercase tracking-widest font-normal opacity-90 mb-1">Другий день</h3>
+                        <p class="font-script text-xl opacity-70">на альтанці</p>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
@@ -151,46 +219,47 @@
 
     <!-- Location & Dress Code Section -->
     <section class="py-24 px-4" data-aos="fade" data-aos-duration="1000">
-        <div class="max-w-7xl mx-auto flex flex-col lg:grid lg:grid-cols-12 gap-16 lg:gap-4 w-full">
+        <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 w-full">
             
             <!-- Location -->
-            <div class="col-span-12 lg:col-span-6 flex flex-col justify-center">
-                <h2 class="text-xs uppercase tracking-[0.4em] font-light text-muted mb-8 flex items-center">
-                    <i data-lucide="map-pin" class="mr-3 w-4 h-4"></i>
-                    Локація
-                </h2>
-                <div class="mb-8 w-full max-w-sm aspect-video bg-chocolate/5 relative overflow-hidden">
-                    <!-- Image Placeholder -->
-                    <img src="Фото загса.jpg" alt="Location" class="w-full h-full object-cover custom-filter absolute inset-0">
+            <div class="flex flex-col items-center text-center border border-chocolate/40 p-10 relative">
+                <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-beige px-4 text-xs tracking-[0.3em] uppercase text-chocolate">Локація</div>
+                
+                <h2 class="font-script text-5xl mb-6 mt-4">Місце проведення</h2>
+                
+                <div class="mb-8 w-full aspect-[4/3] bg-chocolate/5 relative overflow-hidden p-2 border border-chocolate/20">
+                    <img src="Фото загса.jpg" alt="Location" class="w-full h-full object-cover custom-filter">
                 </div>
-                <a href="https://maps.app.goo.gl/L5coeAoeUDkddvm16" target="_blank" rel="noopener noreferrer" class="group flex items-center justify-between border-b border-chocolate pb-4 hover:border-muted transition-colors duration-300 w-full lg:w-3/4 gap-4">
-                    <span class="flex-1 min-w-0 break-words text-sm sm:text-lg md:text-xl font-light tracking-wide group-hover:text-muted transition-colors duration-300">Відділ ДРАЦС на Римарській</span>
-                    <i data-lucide="arrow-up-right" class="w-5 h-5 shrink-0 group-hover:text-muted group-hover:translate-x-1 group-hover:-translate-y-1 transition-all duration-300"></i>
+                
+                <p class="text-lg font-normal tracking-wide mb-6">Відділ ДРАЦС<br>на Римарській</p>
+                
+                <a href="https://maps.app.goo.gl/L5coeAoeUDkddvm16" target="_blank" rel="noopener noreferrer" class="bg-chocolate text-beige uppercase tracking-[0.2em] text-xs py-4 px-8 hover:bg-transparent hover:text-chocolate border border-chocolate transition-colors duration-500 w-full">
+                    Відкрити карту
                 </a>
-                <p class="mt-4 font-mono text-sm text-muted">Натисніть для переходу в карти</p>
             </div>
 
             <!-- Dress Code -->
-            <div class="col-span-12 lg:col-span-6 flex flex-col justify-center lg:pl-12 lg:border-l border-chocolate/20">
-                <h2 class="text-xs uppercase tracking-[0.4em] font-light text-muted mb-12 flex items-center">
-                    <i data-lucide="shirt" class="mr-3 w-4 h-4"></i>
-                    Дрес-код
-                </h2>
-                <p class="font-light text-lg mb-12 leading-relaxed">
-                    Ми будемо раді, якщо ви підтримаєте кольорову гаму нашого свята. Будь ласка, обирайте вбрання у наступних відтінках:
+            <div class="flex flex-col items-center text-center border border-chocolate/40 p-10 relative" style="background-color: #F5EFEB;">
+                <div class="absolute -top-3 left-1/2 -translate-x-1/2 px-4 text-xs tracking-[0.3em] uppercase text-chocolate" style="background-color: #F5EFEB;">Дрес-код</div>
+                
+                <h2 class="font-script text-5xl mb-6 mt-4">Кольорова палітра</h2>
+                
+                <p class="font-normal text-base mb-12 leading-relaxed opacity-90">
+                    Ми будемо вдячні, якщо ви підтримаєте колірну гаму нашого свята та оберете вбрання в цих елегантних відтінках:
                 </p>
-                <div class="flex flex-wrap gap-4 sm:gap-8 justify-start items-end">
-                    <div class="flex flex-col items-center group w-16 sm:w-24 shrink-0">
-                        <div class="w-16 h-16 sm:w-24 sm:h-24 !rounded-full mb-4 border border-chocolate/10 transition-transform duration-500 group-hover:scale-110" style="background-color: #E3DAC9;"></div>
-                        <span class="font-mono text-[10px] sm:text-xs tracking-widest text-muted">#E3DAC9</span>
+                
+                <div class="flex gap-4 justify-center items-center w-full mt-auto">
+                    <!-- Circle 1 -->
+                    <div class="flex flex-col items-center group">
+                        <div class="w-16 h-16 !rounded-full mb-4 border border-chocolate/20 shadow-inner transition-transform duration-500 group-hover:scale-110" style="background-color: #E3DAC9;"></div>
                     </div>
-                    <div class="flex flex-col items-center group w-16 sm:w-24 shrink-0">
-                        <div class="w-16 h-16 sm:w-24 sm:h-24 !rounded-full mb-4 border border-chocolate/10 transition-transform duration-500 group-hover:scale-110" style="background-color: #C19A6B;"></div>
-                        <span class="font-mono text-[10px] sm:text-xs tracking-widest text-muted">#C19A6B</span>
+                    <!-- Circle 2 -->
+                    <div class="flex flex-col items-center group">
+                        <div class="w-16 h-16 !rounded-full mb-4 border border-chocolate/20 shadow-inner transition-transform duration-500 group-hover:scale-110" style="background-color: #C19A6B;"></div>
                     </div>
-                    <div class="flex flex-col items-center group w-16 sm:w-24 shrink-0">
-                        <div class="w-16 h-16 sm:w-24 sm:h-24 !rounded-full mb-4 transition-transform duration-500 group-hover:scale-110" style="background-color: #4B3621;"></div>
-                        <span class="font-mono text-[10px] sm:text-xs tracking-widest text-muted">#4B3621</span>
+                    <!-- Circle 3 -->
+                    <div class="flex flex-col items-center group">
+                        <div class="w-16 h-16 !rounded-full mb-4 transition-transform duration-500 group-hover:scale-110" style="background-color: #4B3621;"></div>
                     </div>
                 </div>
             </div>
@@ -201,39 +270,41 @@
     <div class="w-full border-t border-chocolate/20"></div>
 
     <!-- RSVP Section -->
-    <section class="py-24 px-4 animate-gradient relative overflow-hidden" data-aos="fade" data-aos-duration="1000">
-        <div class="absolute right-0 top-0 w-1/3 h-full opacity-5 pointer-events-none">
-             <h1 class="text-[15rem] md:text-[30rem] font-black tracking-tighter leading-none -mt-16 md:-mt-32 -mr-16 md:-mr-32 writing-vertical">RSVP</h1>
-        </div>
+    <section class="py-24 px-4 animate-gradient relative overflow-hidden border-t border-chocolate/20" data-aos="fade" data-aos-duration="1000">
+        <div class="relative z-10 max-w-xl mx-auto text-center flex flex-col items-center border border-chocolate/40 p-10 bg-beige/80 backdrop-blur-sm">
+            <h2 class="font-script text-6xl mb-4"><span class="overflow-hidden inline-block"><span class="block" data-aos="reveal-up" data-aos-duration="1200">Присутність</span></span></h2>
+            
+            <div class="flex items-center justify-center space-x-4 mb-8">
+                <div class="w-12 h-px bg-chocolate opacity-40"></div>
+                <div class="w-2 h-2 rotate-45 border border-chocolate opacity-60"></div>
+                <div class="w-12 h-px bg-chocolate opacity-40"></div>
+            </div>
 
-        <div class="relative z-10 max-w-3xl mx-auto text-center flex flex-col items-center">
-            <h2 class="text-3xl md:text-6xl font-black uppercase mb-6"><span class="overflow-hidden inline-block"><span class="block" data-aos="reveal-up" data-aos-duration="1200">Присутність</span></span></h2>
-            <p class="font-light text-muted mb-16">Будь ласка, підтвердіть свою присутність до 1 липня 2026 року.</p>
+            <p class="font-normal opacity-90 mb-12">Будь ласка, підтвердіть свою присутність до 1 липня 2026 року.</p>
 
             <form class="w-full flex flex-col space-y-12">
                 <div class="relative w-full">
-                    <input type="text" id="name" required placeholder="ВАШІ ІМ'Я ТА ПРІЗВИЩЕ" class="w-full bg-transparent border-b border-chocolate py-4 text-center uppercase tracking-widest font-light placeholder:text-muted/50 focus:outline-none focus:border-muted transition-colors duration-300">
+                    <input type="text" id="name" required placeholder="Ваші ім'я та прізвище" class="w-full bg-transparent border-b border-chocolate py-4 text-center font-normal text-xl placeholder:text-muted/60 focus:outline-none focus:border-muted transition-colors duration-300">
                 </div>
                 
-                <div class="w-full flex flex-wrap gap-8 justify-center pb-8 border-b border-chocolate/20">
+                <div class="w-full flex flex-wrap gap-8 justify-center pb-8">
                     <label class="flex items-center cursor-pointer group">
                         <input type="radio" name="attendance" value="yes" required class="sr-only peer">
-                        <div class="w-4 h-4 border border-chocolate peer-checked:bg-chocolate flex items-center justify-center mr-3 transition-colors">
-                            <!-- Custom checkmark block -->
-                            <div class="w-2 h-2 bg-beige opacity-0 peer-checked:opacity-100 transition-opacity"></div>
+                        <div class="w-5 h-5 border border-chocolate peer-checked:bg-chocolate flex items-center justify-center mr-3 transition-colors rounded-full">
+                            <div class="w-2.5 h-2.5 bg-beige opacity-0 peer-checked:opacity-100 transition-opacity rounded-full"></div>
                         </div>
-                        <span class="uppercase tracking-widest text-sm font-light group-hover:text-muted transition-colors">Я прийду</span>
+                        <span class="text-lg font-normal opacity-80 group-hover:opacity-100 transition-colors">Я прийду</span>
                     </label>
                     <label class="flex items-center cursor-pointer group">
                         <input type="radio" name="attendance" value="no" required class="sr-only peer">
-                        <div class="w-4 h-4 border border-chocolate peer-checked:bg-chocolate flex items-center justify-center mr-3 transition-colors">
-                            <div class="w-2 h-2 bg-beige opacity-0 peer-checked:opacity-100 transition-opacity"></div>
+                        <div class="w-5 h-5 border border-chocolate peer-checked:bg-chocolate flex items-center justify-center mr-3 transition-colors rounded-full">
+                            <div class="w-2.5 h-2.5 bg-beige opacity-0 peer-checked:opacity-100 transition-opacity rounded-full"></div>
                         </div>
-                        <span class="uppercase tracking-widest text-sm font-light group-hover:text-muted transition-colors">Не зможу бути</span>
+                        <span class="text-lg font-normal opacity-80 group-hover:opacity-100 transition-colors">Не зможу бути</span>
                     </label>
                 </div>
 
-                <button type="submit" class="self-center bg-chocolate text-beige border border-chocolate px-12 py-5 uppercase tracking-[0.2em] text-sm hover:bg-beige hover:text-chocolate transition-colors duration-500 w-full sm:w-auto">
+                <button type="submit" class="self-center bg-transparent border border-chocolate text-chocolate px-16 py-4 uppercase tracking-[0.2em] text-xs hover:bg-chocolate hover:text-beige transition-colors duration-500 w-full sm:w-auto">
                     Відправити
                 </button>
             </form>
