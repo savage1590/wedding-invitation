@@ -13,46 +13,78 @@ document.addEventListener('DOMContentLoaded', () => {
         lucide.createIcons();
     }
 
-    // 3. Countdown Timer Logic
-    // Target date: July 18, 2026 13:00:00
+    // 3. Countdown Timer Logic (Speedometer Effect)
     const targetDate = new Date('2026-07-18T13:00:00').getTime();
 
     const daysEl = document.getElementById('days');
     const hoursEl = document.getElementById('hours');
     const minutesEl = document.getElementById('minutes');
     const secondsEl = document.getElementById('seconds');
+    
+    let isTimerAnimated = false;
 
-    function updateCountdown() {
-        if (!daysEl || !hoursEl || !minutesEl || !secondsEl) return;
-
+    function getDistance() {
         const now = new Date().getTime();
         const distance = targetDate - now;
+        if (distance < 0) return { d: 0, h: 0, m: 0, s: 0 };
 
-        if (distance < 0) {
-            // Event has passed
-            daysEl.innerText = '00';
-            hoursEl.innerText = '00';
-            minutesEl.innerText = '00';
-            secondsEl.innerText = '00';
-            return;
-        }
-
-        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-        // Format to always have 2 digits
-        daysEl.innerText = days.toString().padStart(2, '0');
-        hoursEl.innerText = hours.toString().padStart(2, '0');
-        minutesEl.innerText = minutes.toString().padStart(2, '0');
-        secondsEl.innerText = seconds.toString().padStart(2, '0');
+        return {
+            d: Math.floor(distance / (1000 * 60 * 60 * 24)),
+            h: Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
+            m: Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)),
+            s: Math.floor((distance % (1000 * 60)) / 1000)
+        };
     }
 
-    // Initial call
-    updateCountdown();
-    // Update every second
-    setInterval(updateCountdown, 1000);
+    function renderTime(d, h, m, s) {
+        if (!daysEl) return;
+        daysEl.innerText = d.toString().padStart(2, '0');
+        hoursEl.innerText = h.toString().padStart(2, '0');
+        minutesEl.innerText = m.toString().padStart(2, '0');
+        secondsEl.innerText = s.toString().padStart(2, '0');
+    }
+
+    function animateTimer() {
+        const target = getDistance();
+        const duration = 1500; // 1.5 seconds
+        const startTime = performance.now();
+
+        function update(currentTime) {
+            const elapsed = currentTime - startTime;
+            const progress = Math.min(elapsed / duration, 1);
+            
+            const easeProgress = progress === 1 ? 1 : 1 - Math.pow(2, -10 * progress);
+
+            renderTime(
+                Math.floor(target.d * easeProgress),
+                Math.floor(target.h * easeProgress),
+                Math.floor(target.m * easeProgress),
+                Math.floor(target.s * easeProgress)
+            );
+
+            if (progress < 1) {
+                requestAnimationFrame(update);
+            } else {
+                setInterval(() => {
+                    const current = getDistance();
+                    renderTime(current.d, current.h, current.m, current.s);
+                }, 1000);
+            }
+        }
+        requestAnimationFrame(update);
+    }
+
+    const timerSection = daysEl ? daysEl.closest('section') : null;
+    if (timerSection) {
+        const timerObserver = new IntersectionObserver((entries) => {
+            if (entries[0].isIntersecting && !isTimerAnimated) {
+                isTimerAnimated = true;
+                animateTimer();
+                timerObserver.disconnect();
+            }
+        }, { threshold: 0.2 });
+        timerObserver.observe(timerSection);
+    }
 
     // 4. RSVP Form Telegram Integration
     const rsvpForm = document.querySelector('form');
@@ -87,6 +119,17 @@ document.addEventListener('DOMContentLoaded', () => {
                     btn.classList.add('bg-beige', 'text-chocolate');
                     btn.classList.remove('bg-chocolate', 'text-beige');
                     e.target.reset();
+
+                    // Trigger Confetti
+                    if (attendance === 'yes' && typeof confetti === 'function') {
+                        confetti({
+                            particleCount: 150,
+                            spread: 80,
+                            origin: { y: 0.6 },
+                            colors: ['#3D2B1F', '#F9F7F2', '#E3DAC9', '#C19A6B'],
+                            disableForReducedMotion: true
+                        });
+                    }
                 } else {
                     btn.innerText = 'ПОМИЛКА';
                 }
