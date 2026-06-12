@@ -115,16 +115,19 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }, { threshold: 0.1, rootMargin: "0px 0px -50px 0px" });
 
-    document.querySelectorAll('.reveal-text').forEach(el => {
+    document.querySelectorAll('.reveal-wrapper').forEach(el => {
         revealObserver.observe(el);
     });
 });
 
 // Preloader Logic
-window.addEventListener('load', () => {
+const hidePreloader = () => {
     const preloader = document.getElementById('preloader');
-    if (preloader) {
+    if (preloader && !preloader.classList.contains('opacity-0')) {
         preloader.classList.add('opacity-0', 'pointer-events-none');
         setTimeout(() => preloader.remove(), 1000);
     }
-});
+};
+
+window.addEventListener('load', hidePreloader);
+setTimeout(hidePreloader, 800); // 800ms max delay to prevent long hangs
