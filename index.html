@@ -160,61 +160,83 @@
                 <div class="w-12 h-px bg-chocolate opacity-40"></div>
             </div>
 
-            <div class="w-full max-w-[200px] md:max-w-xs mx-auto flex flex-col relative mt-12 mb-16 z-10">
-                <!-- Segment 1 -->
-                <div class="relative w-1/2 ml-auto py-16 md:py-24">
-                    <svg class="absolute left-0 top-0 w-full h-full pointer-events-none text-chocolate/40 overflow-visible" viewBox="0 0 100 100" preserveAspectRatio="none">
-                        <path d="M 0,0 C 120,0 120,100 0,100" fill="none" stroke="currentColor" stroke-width="1.5" stroke-dasharray="4 4" vector-effect="non-scaling-stroke"></path>
+            <div class="w-full max-w-lg mx-auto flex flex-col relative mt-12 mb-16 z-10">
+                <!-- Center Line Reference (invisible) -->
+                <div class="absolute top-0 bottom-0 left-1/2 w-px pointer-events-none"></div>
+
+                <!-- Segment 1 (13:00) -->
+                <div class="relative w-full flex pb-20 md:pb-28">
+                    <!-- SVG Curve Right -->
+                    <svg class="absolute top-4 left-1/2 w-24 md:w-32 h-full pointer-events-none text-chocolate/50 overflow-visible" viewBox="0 0 100 100" preserveAspectRatio="none">
+                        <path d="M 0,0 C 120,0 120,100 0,100" fill="none" stroke="currentColor" stroke-width="2" stroke-dasharray="0.1 7" stroke-linecap="round" vector-effect="non-scaling-stroke"></path>
                     </svg>
-                    <!-- Node 1 -->
-                    <div class="absolute -top-[14px] -left-3 bg-beige p-1">
-                        <i data-lucide="flower-2" class="w-5 h-5 text-chocolate/80"></i>
+
+                    <!-- Icon -->
+                    <div class="absolute left-1/2 -translate-x-1/2 top-0 bg-beige p-2 z-10 rounded-full">
+                        <i data-lucide="flower-2" class="w-6 h-6 text-chocolate/80"></i>
                     </div>
-                    <div class="absolute -top-6 -left-40 md:-left-56 w-36 md:w-48 text-right">
+
+                    <!-- Text Left -->
+                    <div class="w-1/2 pr-10 md:pr-16 text-right pt-2">
                         <p class="font-normal text-3xl md:text-4xl tracking-widest leading-none mb-1 text-chocolate">13:00</p>
                         <h3 class="text-[10px] md:text-xs uppercase tracking-widest font-normal opacity-90 mb-1">Розпис у РАЦСі</h3>
                         <p class="font-script text-xl opacity-70">офіційна частина</p>
                     </div>
+                    <div class="w-1/2"></div>
                 </div>
 
-                <!-- Segment 2 -->
-                <div class="relative w-1/2 mr-auto py-16 md:py-24">
-                    <svg class="absolute left-0 top-0 w-full h-full pointer-events-none text-chocolate/40 overflow-visible" viewBox="0 0 100 100" preserveAspectRatio="none">
-                        <path d="M 100,0 C -20,0 -20,100 100,100" fill="none" stroke="currentColor" stroke-width="1.5" stroke-dasharray="4 4" vector-effect="non-scaling-stroke"></path>
+                <!-- Segment 2 (14:00) -->
+                <div class="relative w-full flex pb-20 md:pb-28">
+                    <!-- SVG Curve Left -->
+                    <svg class="absolute top-4 right-1/2 w-24 md:w-32 h-full pointer-events-none text-chocolate/50 overflow-visible" viewBox="0 0 100 100" preserveAspectRatio="none">
+                        <path d="M 100,0 C -20,0 -20,100 100,100" fill="none" stroke="currentColor" stroke-width="2" stroke-dasharray="0.1 7" stroke-linecap="round" vector-effect="non-scaling-stroke"></path>
                     </svg>
-                    <!-- Node 2 -->
-                    <div class="absolute -top-[14px] -right-3 bg-beige p-1">
-                        <i data-lucide="flower-2" class="w-5 h-5 text-chocolate/80"></i>
+
+                    <!-- Icon -->
+                    <div class="absolute left-1/2 -translate-x-1/2 top-0 bg-beige p-2 z-10 rounded-full">
+                        <i data-lucide="flower-2" class="w-6 h-6 text-chocolate/80"></i>
                     </div>
-                    <div class="absolute -top-6 -right-40 md:-right-56 w-36 md:w-48 text-left">
+
+                    <div class="w-1/2"></div>
+                    <!-- Text Right -->
+                    <div class="w-1/2 pl-10 md:pl-16 text-left pt-2">
                         <p class="font-normal text-3xl md:text-4xl tracking-widest leading-none mb-1 text-chocolate">14:00</p>
                         <h3 class="text-[10px] md:text-xs uppercase tracking-widest font-normal opacity-90 mb-1">Фотосесія</h3>
                         <p class="font-script text-xl opacity-70">в студії</p>
                     </div>
                 </div>
 
-                <!-- Segment 3 -->
-                <div class="relative w-1/2 ml-auto py-16 md:py-24">
-                    <svg class="absolute left-0 top-0 w-full h-full pointer-events-none text-chocolate/40 overflow-visible" viewBox="0 0 100 100" preserveAspectRatio="none">
-                        <path d="M 0,0 C 120,0 120,100 0,100" fill="none" stroke="currentColor" stroke-width="1.5" stroke-dasharray="4 4" vector-effect="non-scaling-stroke"></path>
+                <!-- Segment 3 (15:30) -->
+                <div class="relative w-full flex pb-20 md:pb-28">
+                    <!-- SVG Curve Right -->
+                    <svg class="absolute top-4 left-1/2 w-24 md:w-32 h-full pointer-events-none text-chocolate/50 overflow-visible" viewBox="0 0 100 100" preserveAspectRatio="none">
+                        <path d="M 0,0 C 120,0 120,100 0,100" fill="none" stroke="currentColor" stroke-width="2" stroke-dasharray="0.1 7" stroke-linecap="round" vector-effect="non-scaling-stroke"></path>
                     </svg>
-                    <!-- Node 3 -->
-                    <div class="absolute -top-[14px] -left-3 bg-beige p-1">
-                        <i data-lucide="flower-2" class="w-5 h-5 text-chocolate/80"></i>
+
+                    <!-- Icon -->
+                    <div class="absolute left-1/2 -translate-x-1/2 top-0 bg-beige p-2 z-10 rounded-full">
+                        <i data-lucide="flower-2" class="w-6 h-6 text-chocolate/80"></i>
                     </div>
-                    <div class="absolute -top-6 -left-40 md:-left-56 w-36 md:w-48 text-right">
+
+                    <!-- Text Left -->
+                    <div class="w-1/2 pr-10 md:pr-16 text-right pt-2">
                         <p class="font-normal text-3xl md:text-4xl tracking-widest leading-none mb-1 text-chocolate">15:30</p>
                         <h3 class="text-[10px] md:text-xs uppercase tracking-widest font-normal opacity-90 mb-1">Святкова вечеря</h3>
                         <p class="font-script text-xl opacity-70">у кафе</p>
                     </div>
+                    <div class="w-1/2"></div>
                 </div>
 
                 <!-- Node 4 (End) -->
-                <div class="relative w-1/2 mr-auto h-4">
-                    <div class="absolute -top-[14px] -right-3 bg-beige p-1">
-                        <i data-lucide="flower-2" class="w-5 h-5 text-chocolate/80"></i>
+                <div class="relative w-full flex">
+                    <!-- Icon -->
+                    <div class="absolute left-1/2 -translate-x-1/2 top-0 bg-beige p-2 z-10 rounded-full">
+                        <i data-lucide="flower-2" class="w-6 h-6 text-chocolate/80"></i>
                     </div>
-                    <div class="absolute -top-6 -right-40 md:-right-56 w-36 md:w-48 text-left">
+
+                    <div class="w-1/2"></div>
+                    <!-- Text Right -->
+                    <div class="w-1/2 pl-10 md:pl-16 text-left pt-2">
                         <p class="font-normal text-2xl md:text-3xl tracking-widest leading-none mb-1 text-chocolate">19.07 <span class="text-xl">13:00</span></p>
                         <h3 class="text-[10px] md:text-xs uppercase tracking-widest font-normal opacity-90 mb-1">Другий день</h3>
                         <p class="font-script text-xl opacity-70">на альтанці</p>
