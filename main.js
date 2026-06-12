@@ -104,20 +104,6 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     }
-
-    // 6. Text Reveal Observer
-    const revealObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('is-revealed');
-                revealObserver.unobserve(entry.target);
-            }
-        });
-    }, { threshold: 0.1, rootMargin: "0px 0px -50px 0px" });
-
-    document.querySelectorAll('.reveal-wrapper').forEach(el => {
-        revealObserver.observe(el);
-    });
 });
 
 // Preloader Logic

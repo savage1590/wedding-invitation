@@ -48,19 +48,11 @@ input:-webkit-autofill:active {
     -webkit-box-shadow: 0 0 0 30px #F9F7F2 inset !important;
     -webkit-text-fill-color: #3D2B1F !important;
     transition: background-color 5000s ease-in-out 0s;
-}
-
-/* Text Reveal Animation */
-.reveal-wrapper {
-    overflow: hidden;
-    display: inline-block;
-    vertical-align: top;
-}
-.reveal-text {
-    display: inline-block;
+/* Text Reveal Animation with AOS */
+[data-aos="reveal-up"] {
     transform: translateY(110%);
-    transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+    transition-property: transform;
 }
-.reveal-wrapper.is-revealed .reveal-text {
+[data-aos="reveal-up"].aos-animate {
     transform: translateY(0);
 }
